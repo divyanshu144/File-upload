@@ -33,8 +33,6 @@ const FileUploadDialog = ({
       disableEnforceFocus // Disable the focus enforcement
       sx={{
         "& .MuiDialog-container": {
-          // backdropFilter: "blur(4px)",
-          zIndex: '10',
           backgroundColor: "rgba(0, 0, 0, 0.2)",
         },
       }}
@@ -81,9 +79,6 @@ const FileUploadDialog = ({
         )}
 
         {selectedOption === "googleDrive" && (
-          // <Typography variant="body1">
-          //   Google Drive upload functionality is not implemented yet.
-          // </Typography>
           <div>
             <GoogleDrivePicker/>
           </div>

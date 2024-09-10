@@ -1,14 +1,8 @@
 .upload-container {
-    /* margin-top: 20px;
-    padding: 20px; */
     width:705px ;
     height: 835px;
     margin-top: 16px;
-    margin-left: 13px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+    margin-left: 50%;
   }
   
   .file-input {
@@ -28,6 +22,10 @@
   
   .upload-button {
     margin-top: 10px;
+  }
+  .file-container{
+    display: flex;
+    gap: 16px;
   }
 
   .dropdown-menu{

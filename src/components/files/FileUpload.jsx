@@ -128,17 +128,19 @@ const FileUpload = () => {
   };
 
   return (
-    <Container className="upload-container">
+    <div className="upload-container">
       <div className="upload-box">
         <Typography variant="h4" align="center">
           File Upload
         </Typography>
-          <Button
+        <div className="file-container">
+        <Button
             variant="contained"
             sx={{ 
               backgroundColor: "#B53736",
               width: '201px',
               height: '52px',
+              marginTop: '20px',
 
             }}
             startIcon={<CloudUpload />}
@@ -146,6 +148,8 @@ const FileUpload = () => {
           >
             Select File
           </Button>
+          <GoogleDrivePicker/>
+        </div>
           <Menu
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
@@ -166,7 +170,6 @@ const FileUpload = () => {
             </MenuItem>
           </Menu>
 
-          <GoogleDrivePicker/>
       </div>
           
       <div className="container">
@@ -202,7 +205,7 @@ const FileUpload = () => {
         file={file}
         url={url}
       />
-    </Container>
+    </div>
   );
 };
 

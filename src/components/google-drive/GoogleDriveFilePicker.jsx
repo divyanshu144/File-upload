@@ -8,15 +8,17 @@ const GoogleDrivePicker = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       {!isSignedIn ? (
-        <Button variant="contained" color="primary" onClick={handleAuthClick}>
-          Sign in with Google
+        <Button variant="contained" sx={{ 
+            backgroundColor: "#B53736", height: '52px'}} onClick={handleAuthClick}>
+          Upload From Google Drive
         </Button>
       ) : (
         <>
-          <Button variant="contained" color="secondary" onClick={handleSignOutClick}>
+          <Button variant="contained" sx={{ 
+            backgroundColor: "#f32013", height: '52px'}} onClick={handleSignOutClick}>
             Sign Out
           </Button>
-          <Button variant="contained" color="primary" onClick={createPicker} style={{ marginLeft: '10px' }}>
+          <Button variant="contained" color="primary" sx={{ height: '52px'}} onClick={createPicker} style={{ marginLeft: '10px' }}>
             Open Google Drive Picker
           </Button>
         </>
