@@ -84,29 +84,36 @@ const FileUpload = () => {
     }
   };
 
-  const handleUrlUpload = async () => {
-    if (!url) {
-      alert("Please enter a URL!");
-      return;
-    }
+  // const handleUrlUpload = async () => {
+  //   if (!url) {
+  //     alert("Please enter a URL!");
+  //     return;
+  //   }
 
-    try {
-      const response = await fetch(url);
-      const blob = await response.blob();
-      const fileRef = ref(storage, `files/${new Date().getTime()}`);
+  //   try {
+  //     new URL(url);
+  // } catch (_) {
+  //     alert("Invalid URL format.");
+  //     return;
+  // }
 
-      setUploading(true);
-      await uploadBytes(fileRef, blob);
-      await fetchUploadedFiles();
-      alert("File uploaded successfully!");
-    } catch (error) {
-      console.error("Error uploading file from URL:", error);
-      alert("Error uploading file from URL.");
-    } finally {
-      setUploading(false);
-      setOpenDialog(false);
-    }
-  };
+  //   try {
+  //     const response = await fetch(url);
+  //     const blob = await response.blob();
+  //     const fileRef = ref(storage, `files/${new Date().getTime()}`);
+
+  //     setUploading(true);
+  //     await uploadBytes(fileRef, blob);
+  //     await fetchUploadedFiles();
+  //     alert("File uploaded successfully!");
+  //   } catch (error) {
+  //     console.error("Error uploading file from URL:", error);
+  //     alert("Error uploading file from URL.");
+  //   } finally {
+  //     setUploading(false);
+  //     setOpenDialog(false);
+  //   }
+  // };
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -199,11 +206,10 @@ const FileUpload = () => {
         selectedOption={selectedOption}
         handleFileChange={handleFileChange}
         handleUpload={handleUpload}
-        handleUrlUpload={handleUrlUpload}
+        // handleUrlUpload={handleUrlUpload}
         handleDialogClose={handleDialogClose}
         uploading={uploading}
         file={file}
-        url={url}
       />
     </div>
   );
