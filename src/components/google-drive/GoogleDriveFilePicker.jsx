@@ -3,7 +3,7 @@ import { Button, Typography } from '@mui/material';
 import useGooglePicker from './useGoogleDrive';
 
 const GoogleDrivePicker = () => {
-  const { isSignedIn, handleAuthClick, handleSignOutClick, createPicker } = useGooglePicker();
+  const { isSignedIn, handleAuthClick, handleSignOutClick, createPicker, fileName, handleUpload } = useGooglePicker();
 
   return (
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
@@ -22,11 +22,17 @@ const GoogleDrivePicker = () => {
         </>
       )}
 
-      <Typography variant="body1" style={{ marginTop: '20px' }}>
-        {isSignedIn ? 'Signed in! You can now open Google Drive and select a file.' : 'Please sign in to access Google Drive.'}
-      </Typography>
+      {fileName && (
+        <div style={{ marginTop: '20px' }}>
+          <Typography variant="body1">Selected file: {fileName}</Typography>
+          <Button variant="contained" color="primary" onClick={handleUpload} style={{ marginTop: '10px' }}>
+            Upload to Firebase
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
 
 export default GoogleDrivePicker;
+

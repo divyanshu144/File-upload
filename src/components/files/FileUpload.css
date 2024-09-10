@@ -5,6 +5,10 @@
     height: 835px;
     margin-top: 16px;
     margin-left: 13px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
   }
   
   .file-input {
@@ -41,14 +45,13 @@
     justify-content: center;
   }
   
-  /* Heading */
+
   .heading {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 600;
   }
   
-  /* Flexbox to align file details and progress on the same line */
   .file-details {
     display: flex;
     justify-content: space-between;
@@ -56,7 +59,7 @@
     width: 100%;
   }
   
-  /* File details section */
+
   .file-info {
     display: flex;
     flex-direction: column;
@@ -74,14 +77,12 @@
     color: #999;
   }
   
-  /* Flexbox to align the progress bar and percentage */
   .progress-container {
     display: flex;
     align-items: center;
     width: 250px;
   }
   
-  /* Progress Bar */
   .progress-bar {
     flex-grow: 1;
     height: 8px;

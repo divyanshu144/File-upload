@@ -30,9 +30,11 @@ const FileUploadDialog = ({
       onClose={handleDialogClose}
       fullWidth
       className="dialog-box"
+      disableEnforceFocus // Disable the focus enforcement
       sx={{
         "& .MuiDialog-container": {
-          backdropFilter: "blur(4px)",
+          // backdropFilter: "blur(4px)",
+          zIndex: '10',
           backgroundColor: "rgba(0, 0, 0, 0.2)",
         },
       }}

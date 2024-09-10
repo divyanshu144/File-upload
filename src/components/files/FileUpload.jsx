@@ -15,6 +15,7 @@ import { storage } from "../../firebase";
 import FileUploadDialog from "./FileUploadDialog";
 import UploadedFilesGrid from "./UploadedFilesGrid";
 import "./FileUpload.css";
+import GoogleDrivePicker from "../google-drive/GoogleDriveFilePicker";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -164,6 +165,8 @@ const FileUpload = () => {
               From Google Drive
             </MenuItem>
           </Menu>
+
+          <GoogleDrivePicker/>
       </div>
           
       <div className="container">
