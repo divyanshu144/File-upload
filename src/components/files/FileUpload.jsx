@@ -3,12 +3,8 @@ import { ref, uploadBytes, getDownloadURL, listAll, getMetadata } from "firebase
 import {
   Button,
   Typography,
-  Container,
-  Grid,
-  CircularProgress,
   Menu,
   MenuItem,
-  Dialog,
 } from "@mui/material";
 import { CloudUpload } from "@mui/icons-material";
 import { storage } from "../../firebase";
@@ -84,36 +80,6 @@ const FileUpload = () => {
     }
   };
 
-  // const handleUrlUpload = async () => {
-  //   if (!url) {
-  //     alert("Please enter a URL!");
-  //     return;
-  //   }
-
-  //   try {
-  //     new URL(url);
-  // } catch (_) {
-  //     alert("Invalid URL format.");
-  //     return;
-  // }
-
-  //   try {
-  //     const response = await fetch(url);
-  //     const blob = await response.blob();
-  //     const fileRef = ref(storage, `files/${new Date().getTime()}`);
-
-  //     setUploading(true);
-  //     await uploadBytes(fileRef, blob);
-  //     await fetchUploadedFiles();
-  //     alert("File uploaded successfully!");
-  //   } catch (error) {
-  //     console.error("Error uploading file from URL:", error);
-  //     alert("Error uploading file from URL.");
-  //   } finally {
-  //     setUploading(false);
-  //     setOpenDialog(false);
-  //   }
-  // };
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -206,7 +172,6 @@ const FileUpload = () => {
         selectedOption={selectedOption}
         handleFileChange={handleFileChange}
         handleUpload={handleUpload}
-        // handleUrlUpload={handleUrlUpload}
         handleDialogClose={handleDialogClose}
         uploading={uploading}
         file={file}
